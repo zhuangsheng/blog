@@ -8,8 +8,9 @@
 namespace console\controllers;
 
 use common\models\User;
+use yii\console\Controller;
 
-class InitController extends \yii\console\Controller
+class InitController extends Controller
 {
     /**
      * create user
@@ -32,8 +33,8 @@ class InitController extends \yii\console\Controller
                     echo $e."\n";
                 }
             }
-            return 1;
+            return Controller::EXIT_CODE_ERROR;
         }
-        return 0;
+        return Controller::EXIT_CODE_NORMAL;
     }
 }
